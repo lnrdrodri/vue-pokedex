@@ -1,5 +1,5 @@
 <template>
-  <v-row v-if="pokemon.id" style="max-height: calc(100vh - 60px)">
+  <v-row v-if="pokemon.id" :style="$vuetify.breakpoint.xs && 'max-height: calc(100vh - 60px)'">
     <v-btn
       color="primary"
       style="color: black; position: fixed; top: 20px; left: 20px; z-index: 10;"
