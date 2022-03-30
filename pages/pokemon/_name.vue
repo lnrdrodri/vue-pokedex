@@ -1,5 +1,5 @@
 <template>
-  <v-row style="overflow: auto">
+  <v-row v-if="pokemon.id" style="max-height: calc(100vh - 60px)">
     <v-btn
       color="primary"
       style="color: black; position: fixed; top: 20px; left: 20px; z-index: 10;"
@@ -8,15 +8,15 @@
       <v-icon>mdi-chevron-left</v-icon>
     </v-btn>
     <v-col cols="12" sm="6">
-        <v-img
+        <img
         :src="pokemon_image"
         :title="`Image of ${pokemon.name}`"
         width="100%"
-      ></v-img>
+      />
     </v-col>
     <v-col cols="12" sm="6" class="pt-16" :style="$vuetify.breakpoint.xs && 'display: flex; flex-direction: column; align-items: center; text-align: center;'">
-      <span>{{`#${pokemon.id}`}}</span>
-      <h1 class="pokemon-name mb-6">{{pokemon.name}}</h1>
+      <span :style="`color: ${$vuetify.theme.themes.dark[pokemon.types[0].type.name]}`">{{`#${pokemon.id}`}}</span>
+      <h1 class="pokemon-name mb-6" :style="`color: ${$vuetify.theme.themes.dark[pokemon.types[0].type.name]}`">{{pokemon.name}}</h1>
       <div class="pb-12">
         <v-chip
           v-for="t in pokemon.types"
@@ -75,6 +75,9 @@ export default {
       pokemon: {
         name: this.$route.params.name,
         locations: [],
+        types: [
+
+        ],
       }
     }
   },
@@ -102,6 +105,7 @@ export default {
         data.locations = local.data.slice(0, 5);
 
         this.pokemon = data;
+        console.log(data);
       } catch(err) {
         console.log(err);
       }
