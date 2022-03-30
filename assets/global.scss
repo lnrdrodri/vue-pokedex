@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "PressStart2P";
+  src: url(~assets/fonts/PressStart2P-Regular.ttf) format("truetype");
+}
+
+* {
+  font-family: "PressStart2P" !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  cursor: url('https://img.icons8.com/color/48/000000/pokeball--v1.png') 15 15, auto !important;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: black;
+}
+::-webkit-scrollbar-thumb {
+  background: #00FF00;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF00CC;
+}
