@@ -10,14 +10,14 @@
       absolute
       app
     >
-    <v-row justify="center">
+    <!-- <v-row justify="center">
       <v-col cols="12" class="text-center">
         Developed by
         <a href="https://github.com/lnrdrodri">
           @lnrdrodri
         </a>
       </v-col>
-    </v-row>
+    </v-row> -->
     </v-footer>
   </v-app>
 </template>
